@@ -39,7 +39,7 @@ public class Main extends Application {
 				if (file != null) {
 
 						player = new Player(file);
-						Scene scene = new Scene(player, 720, 535, Color.BLACK);
+						Scene scene = new Scene(player, 700, 500, Color.BLACK);
 						primaryStage.setScene(scene);
 			
 				}
@@ -51,7 +51,7 @@ public class Main extends Application {
 		
 		player.setTop(menu);
 		
-		Scene scene = new Scene(player, 720, 535, Color.BLACK);
+		Scene scene = new Scene(player, 700, 500, Color.BLACK);
 		
 		primaryStage.setScene(scene);
 		primaryStage.show();

@@ -19,6 +19,7 @@ public class Player extends BorderPane {
 	Pane mpane;
 	MediaBar bar;
 	
+	
 	public Player(File file) {
 		try {
 			media = new Media(file.toURI().toURL().toString());
