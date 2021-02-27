@@ -26,6 +26,7 @@ public class MediaBar extends HBox {
 	
 	public MediaBar(MediaPlayer play) {
 		player = play;
+		player.setAutoPlay(true);
 		
 		setAlignment(Pos.CENTER);
 		setPadding(new Insets(5, 10, 5, 10));

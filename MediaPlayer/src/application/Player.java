@@ -1,5 +1,8 @@
 package application;
 
+import java.io.File;
+import java.net.MalformedURLException;
+
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
@@ -14,8 +17,13 @@ public class Player extends BorderPane {
 	Pane mpane;
 	MediaBar bar;
 	
-	public Player(String file) {
-		media = new Media(file);
+	public Player(File file) {
+		try {
+			media = new Media(file.toURI().toURL().toString());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		player = new MediaPlayer(media);
 		view = new MediaView(player);
 		mpane = new Pane();
