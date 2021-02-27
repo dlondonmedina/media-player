@@ -3,6 +3,8 @@ package application;
 import java.io.File;
 import java.net.MalformedURLException;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
@@ -26,6 +28,12 @@ public class Player extends BorderPane {
 		}
 		player = new MediaPlayer(media);
 		view = new MediaView(player);
+		DoubleProperty mvw = view.fitWidthProperty();
+		DoubleProperty mvh = view.fitHeightProperty();
+		mvw.bind(Bindings.selectDouble(view.sceneProperty(), "width"));
+		mvh.bind(Bindings.selectDouble(view.sceneProperty(), "height"));
+		view.setPreserveRatio(true);
+		
 		mpane = new Pane();
 		mpane.getChildren().add(view);
 		
